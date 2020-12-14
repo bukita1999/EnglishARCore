@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GoogleARCore.Examples.AugmentedImage;
 
 public class ZYC_Matter_Controll : MonoBehaviour
 {
@@ -53,5 +54,10 @@ public class ZYC_Matter_Controll : MonoBehaviour
             }
             next=false;
         }
+    }
+
+    void OnDestroy()
+    {
+        transform.parent.GetComponent<ZYC_AugmentedImageVisualizer>().over();
     }
 }

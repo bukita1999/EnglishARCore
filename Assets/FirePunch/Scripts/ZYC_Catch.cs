@@ -16,9 +16,11 @@ public class ZYC_Catch : MonoBehaviour
         if(this.gameObject.GetComponent<Rigidbody>().useGravity==false){
             return;
         }
-        if(true){    //XmlAdministrator.addXMLData(objectname)
+        if(collision.gameObject.name=="Dish"){    //XmlAdministrator.addXMLData(objectname)
             XmlAdministrator.addXMLData(objectname);
-            ZYC_Text_Manager.bornText(objectname,transform.position);
+            ZYC_Text_Manager.bornText(objectname,transform.parent.Find("zhishi").position,transform.parent.gameObject);
+            Destroy(gameObject.GetComponent<Rigidbody>());
+            gameObject.layer=2;
             if(!isNext){
                 isNext=true;
                 ZYC_Matter_Controll.next=true;

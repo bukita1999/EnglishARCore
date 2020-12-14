@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/WonderofWorld/Scenes/AbsorptionTitle.unity
     guid: 024e7ee00bf36c64caddbd535ed7afe5
+  - enabled: 1
+    path: Assets/PartTwo/Scenes/PartTwoNew.unity
+    guid: 98df5ce73e30ff44c9879d713abcceb1
   m_configObjects: {}

@@ -7,6 +7,17 @@ public class ZYC_YinxiaoController : MonoBehaviour
     private static AudioSource audioSource;
     public static AudioClip audioClip;
 
+    public static bool getIsPlaying(){
+        return audioSource.isPlaying;
+    }
+
+    public static void stopVoice(){
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+    }
+
     public static void zhuangzi(){
         audioClip=(AudioClip)Resources.Load("Sounds/Voices/"+"Part1_Plate");
         if (audioSource.isPlaying)

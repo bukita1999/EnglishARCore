@@ -26,6 +26,7 @@
         public float TimePassed=0.0f;
 
         public float angel=30.0f;
+        bool isOver=false;
 
         /// <summary>
         /// The Unity Update method.
@@ -35,6 +36,13 @@
             item=this.transform.GetChild(0).gameObject;
         }
         
+        public void over(){
+            isOver=true;
+        }
+        public bool getIsOver(){
+            return isOver;
+        }
+
         public void Update()
         {
             if(isOverImage){

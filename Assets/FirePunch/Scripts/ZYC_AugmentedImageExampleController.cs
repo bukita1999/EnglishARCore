@@ -33,6 +33,7 @@ namespace GoogleARCore.Examples.AugmentedImage
         /// The overlay containing the fit to scan user guide.
         /// </summary>
         public GameObject FitToScanOverlay;
+        public GameObject hand;
 
         private Dictionary<int, ZYC_AugmentedImageVisualizer> m_Visualizers
             = new Dictionary<int, ZYC_AugmentedImageVisualizer>();
@@ -82,6 +83,9 @@ namespace GoogleARCore.Examples.AugmentedImage
                 m_Visualizers.TryGetValue(image.DatabaseIndex, out visualizer);
                 if (image.TrackingState == TrackingState.Tracking && visualizer == null)
                 {
+                    if(!CheckIsOver()){
+                        break;
+                    }
                     // Create an anchor to ensure that ARCore keeps tracking this augmented image.
                     Anchor anchor = image.CreateAnchor(image.CenterPose);
                     if(image.Name=="P49_1"){
@@ -115,11 +119,22 @@ namespace GoogleARCore.Examples.AugmentedImage
                 if (visualizer.Image.TrackingState == TrackingState.Tracking)
                 {
                     FitToScanOverlay.SetActive(false);
+                    hand.SetActive(false);
                     return;
                 }
             }
 
             FitToScanOverlay.SetActive(true);
+        }
+        bool CheckIsOver(){
+            foreach (var image in m_TempAugmentedImages){
+                ZYC_AugmentedImageVisualizer visualizer = null;
+                m_Visualizers.TryGetValue(image.DatabaseIndex, out visualizer);
+                if(visualizer!=null&&!visualizer.getIsOver()){
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

@@ -7,6 +7,10 @@ public class ZYC_SoundManager : MonoBehaviour
     private static AudioSource audioSource = null;
     private static AudioClip audioClip = null;
 
+    public static bool getIsPlaying(){
+        return audioSource.isPlaying;
+    }
+
     public static void voice(string objectname){
         audioClip=(AudioClip)Resources.Load("Sounds/Voices/"+objectname);
         if (audioSource.isPlaying)
@@ -31,6 +35,12 @@ public class ZYC_SoundManager : MonoBehaviour
         {
             audioSource.Play();
         }
+    }
+    public static float getLength(){
+        if(audioClip!=null){
+            return audioClip.length;
+        }
+        return 0f;
     }
     // Start is called before the first frame update
     void Start()

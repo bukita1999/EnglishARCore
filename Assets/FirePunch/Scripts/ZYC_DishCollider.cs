@@ -8,7 +8,7 @@ public class ZYC_DishCollider : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.transform.parent==null&&other.gameObject.GetComponent<Rigidbody>().useGravity==false){
+        if(other.gameObject.transform.parent==target&&other.gameObject.GetComponent<Rigidbody>().useGravity==false){
             other.gameObject.transform.parent=target;
             other.gameObject.GetComponent<Rigidbody>().useGravity=true;
             other.gameObject.GetComponent<Rigidbody>().drag=0;

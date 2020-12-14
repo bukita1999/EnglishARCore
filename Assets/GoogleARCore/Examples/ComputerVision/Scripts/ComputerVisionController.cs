@@ -153,7 +153,7 @@ namespace GoogleARCore.Examples.ComputerVision
             HighResConfigToggle.GetComponentInChildren<Text>().text +=
                 "\n(Not supported in editor)";
             SnackbarText.text =
-                "Use mouse/keyboard in the editor Game view to toggle settings.\n" +
+                "Use mouse/keyboard in the editor Game view to toggl e settings.\n" +
                 "(Tapping on the device screen will not work while running in the editor)";
 #else
             SnackbarText.text = string.Empty;

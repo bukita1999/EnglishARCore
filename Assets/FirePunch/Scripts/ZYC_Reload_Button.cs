@@ -16,8 +16,8 @@ public class ZYC_Reload_Button : MonoBehaviour,IPointerClickHandler
         Camera=GameObject.Find("First Person Camera").transform;
         RectTransform rtr= this.gameObject.GetComponent<RectTransform>();
         //设置父级基准位置
-        rtr.anchorMin = new Vector2(0.1f,0.9f);
-        rtr.anchorMax = new Vector2(0.1f,0.9f);
+        rtr.anchorMin = new Vector2(0.05f,0.9f);
+        rtr.anchorMax = new Vector2(0.05f,0.9f);
         //定义控件自身定位点位置
         rtr.pivot = new Vector2(0.5f, 0.5f);
         //定义控件定位点相对基准位置的偏移
@@ -27,7 +27,18 @@ public class ZYC_Reload_Button : MonoBehaviour,IPointerClickHandler
     }
 
     public void OnPointerClick(PointerEventData eventData){
-        SceneManager.LoadScene("FirstPart");
+        
+        ZYC_YinxiaoController.stopVoice();
+        ZYC_SoundManager.stopVoice();
+        SceneManager.LoadScene("MainTitle");
+        
+        /*
+        if(ZYC_YinxiaoController.getIsPlaying()||ZYC_SoundManager.getIsPlaying()){
+            return;
+        }else{
+            SceneManager.LoadScene("FirstPart");
+        }
+        */
     }
 
     void ButtonUpdate(){
