@@ -17,7 +17,7 @@ public class ZYC_RayController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //DrawLine();
+        DrawLine();
     }
 
     void DrawLine(){
