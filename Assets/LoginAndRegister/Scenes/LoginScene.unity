@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 59183698}
   - component: {fileID: 59183697}
   m_Layer: 5
-  m_Name: passwd_input
+  m_Name: signup_passwd_input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -322,8 +322,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 249858539}
+  - component: {fileID: 249858540}
   m_Layer: 0
-  m_Name: OniineManager
+  m_Name: OnlineManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -343,6 +344,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &249858540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249858538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4740032f7aeb3848a0481f10edbe008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signup_user_inputfield: {fileID: 1981701202}
+  signup_password_inputfield: {fileID: 59183697}
 --- !u!1 &294961183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,7 +1409,7 @@ GameObject:
   - component: {fileID: 1981701203}
   - component: {fileID: 1981701202}
   m_Layer: 5
-  m_Name: user_input
+  m_Name: signup_user_input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
