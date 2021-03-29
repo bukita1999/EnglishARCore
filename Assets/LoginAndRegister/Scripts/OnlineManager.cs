@@ -18,10 +18,10 @@ public class OnlineManager : MonoBehaviour
     MySqlDataReader reader;
     public GameObject notification_obj;
     public int user_number;
-    private static string database = "EnglishARCore";
-    private static string host = "47.101.159.20";
-    private static string id = "caochuang";
-    private static string pwd = "RFD7W6jjPeYbTfW4";
+    private static string database = "englisharcore";
+    private static string host = "139.196.204.248";
+    private static string id = "EnglishARCore";
+    private static string pwd = "C4xdhGZNzH7DiwDS";
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +56,7 @@ public class OnlineManager : MonoBehaviour
         {
             OpenSql();
             Debug.Log("SQL打开！");
-            string sqlString = string.Format("INSERT INTO `EnglishARCore`.`user` (`No.`, `name`, `password`) VALUES (NULL, '{0}','{1}') ",
+            string sqlString = string.Format("INSERT INTO `user` (`No.`, `name`, `password`) VALUES (NULL, '{0}','{1}') ",
                 signup_user_inputfield.text, signup_password_inputfield.text);
             Debug.Log(sqlString);
             
@@ -92,12 +92,18 @@ public class OnlineManager : MonoBehaviour
 
             MySqlCommand mysqlcom = new MySqlCommand(sqlString, mySqlConnection);
             reader = mysqlcom.ExecuteReader();
-            while (reader.Read())
+            if (reader.Read())
             {
                 Debug.Log(reader["No."].ToString());
+                notification = "登录成功";
+                user_number = Convert.ToInt32(reader["No."]);
+            }
+            else
+            {
+                notification = "用户名或密码错误";
             }
             reader.Close();
-            notification = "登录成功";
+            
         }
         catch(MySqlException ex)
         {
