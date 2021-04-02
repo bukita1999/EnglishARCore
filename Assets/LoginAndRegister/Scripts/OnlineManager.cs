@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using MySql.Data.MySqlClient;
 using MySql.Data;
 using System;
@@ -116,8 +117,15 @@ public class OnlineManager : MonoBehaviour
             Debug.Log(notification);
             notification_obj.GetComponent<CC_notification_textchanged>().TextChanged(notification);
         }
+        if(notification is "登录成功")
+        {
+            Invoke(nameof(SceneChange), 2f);
+        }
     }
-
+    private void SceneChange()
+    {
+        SceneManager.LoadScene("Maintitle");
+    }
     private void OpenSql()
     {
         Debug.Log("开始打开SQL");

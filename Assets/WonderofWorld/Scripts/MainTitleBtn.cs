@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class MainTitleBtn : MonoBehaviour
 {
-    private int sceneNumber;
+    public int sceneNumber;
+    public string sceneName;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +22,21 @@ public class MainTitleBtn : MonoBehaviour
     public void ChangeScene(int num)
     {
         sceneNumber = num;
-        Invoke(nameof(WaitForOne), 1f);
+        Invoke(nameof(WaitForOneNumber), 1f);
     }
-    public void WaitForOne()
+    public void ChangeScene(string name)
+    {
+        sceneName = name;
+        Invoke(nameof(WaitForOneName), 1f);
+    }
+    public void WaitForOneNumber()
     {
         Debug.Log("Title Change");
         SceneManager.LoadScene(sceneNumber);
     }
-    
+    public void WaitForOneName()
+    {
+        Debug.Log("Title Change");
+        SceneManager.LoadScene(sceneName);
+    }
 }
