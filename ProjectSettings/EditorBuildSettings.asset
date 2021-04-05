@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PartTwo/Scenes/PartTwoNew.unity
     guid: 98df5ce73e30ff44c9879d713abcceb1
+  - enabled: 1
+    path: Assets/WonderofWorld/Scenes/PracticeTitle.unity
+    guid: 0d57cfdbb67fe5c42a6335522837614e
   m_configObjects: {}
