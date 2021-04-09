@@ -179,7 +179,6 @@ GameObject:
   - component: {fileID: 718782822003540744}
   - component: {fileID: 5122075697841148256}
   - component: {fileID: 2813269039815300170}
-  - component: {fileID: 6042955443689365302}
   m_Layer: 0
   m_Name: juice
   m_TagString: Untagged
@@ -246,7 +245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f59677d1e952be42b8d56df443d5f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectname: 
   UiController: {fileID: 0}
 --- !u!114 &2813269039815300170
 MonoBehaviour:
@@ -260,22 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deba2ccd6bff18d469200a5065dfdf09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diffuse: {fileID: 0}
-  drawline: {fileID: 0}
-  rend: {fileID: 0}
   jiantou: {fileID: 583216966634352648}
---- !u!114 &6042955443689365302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718782822003540746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867147a753eee114fb55b54aa7b8c754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1382739752160691785
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +565,6 @@ GameObject:
   - component: {fileID: 2871446606029573086}
   - component: {fileID: 7069819624387088186}
   - component: {fileID: 8632241013217540810}
-  - component: {fileID: 287723301526028915}
   m_Layer: 0
   m_Name: water
   m_TagString: Untagged
@@ -649,7 +631,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f59677d1e952be42b8d56df443d5f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectname: 
   UiController: {fileID: 0}
 --- !u!114 &8632241013217540810
 MonoBehaviour:
@@ -663,22 +644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deba2ccd6bff18d469200a5065dfdf09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diffuse: {fileID: 0}
-  drawline: {fileID: 0}
-  rend: {fileID: 0}
   jiantou: {fileID: 1579248955233355043}
---- !u!114 &287723301526028915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2871446606029573080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867147a753eee114fb55b54aa7b8c754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3665559048644090286
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +845,7 @@ GameObject:
   - component: {fileID: 1051791038013203045}
   m_Layer: 0
   m_Name: plate
-  m_TagString: Untagged
+  m_TagString: Dish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1060,12 +1026,10 @@ GameObject:
   - component: {fileID: 5692585691376246080}
   - component: {fileID: 5692585691373346146}
   - component: {fileID: 5692585691374346146}
-  - component: {fileID: 6797622763967617160}
   - component: {fileID: 6443006061575327136}
   - component: {fileID: 4076268945775107636}
   - component: {fileID: 8291743176445778461}
   - component: {fileID: 658509573065443915}
-  - component: {fileID: 4351831021128104265}
   m_Layer: 0
   m_Name: egg
   m_TagString: Untagged
@@ -1133,20 +1097,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &6797622763967617160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5692585691376271712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3640c6401a216249a37023929c331d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectname: egg
-  UiController: {fileID: 0}
 --- !u!64 &6443006061575327136
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1189,7 +1139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f59677d1e952be42b8d56df443d5f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectname: 
   UiController: {fileID: 0}
 --- !u!114 &658509573065443915
 MonoBehaviour:
@@ -1203,22 +1152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deba2ccd6bff18d469200a5065dfdf09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diffuse: {fileID: 0}
-  drawline: {fileID: 0}
-  rend: {fileID: 0}
   jiantou: {fileID: 1382739752160691787}
---- !u!114 &4351831021128104265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5692585691376271712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867147a753eee114fb55b54aa7b8c754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6548340915016572960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,7 +1390,6 @@ GameObject:
   - component: {fileID: 8258728259662674407}
   - component: {fileID: 6029567596376360436}
   - component: {fileID: 5897764810295380380}
-  - component: {fileID: 5388412066813453128}
   m_Layer: 0
   m_Name: bread
   m_TagString: Untagged
@@ -1566,7 +1499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f59677d1e952be42b8d56df443d5f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectname: 
   UiController: {fileID: 0}
 --- !u!114 &5897764810295380380
 MonoBehaviour:
@@ -1580,22 +1512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deba2ccd6bff18d469200a5065dfdf09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diffuse: {fileID: 0}
-  drawline: {fileID: 0}
-  rend: {fileID: 0}
   jiantou: {fileID: 3961259534502922767}
---- !u!114 &5388412066813453128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8258728259662674427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867147a753eee114fb55b54aa7b8c754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8412914373067041010
 GameObject:
   m_ObjectHideFlags: 0

@@ -54,6 +54,9 @@ namespace GoogleARCore.Examples.HelloAR
         /// </summary>
         public GameObject GameObjectHorizontalPlanePrefab;
 
+        public GameObject Plane;
+        public GameObject Point;
+
         /// <summary>
         /// A prefab to place when a raycast from a user touch hits a feature point.
         /// </summary>
@@ -138,6 +141,8 @@ namespace GoogleARCore.Examples.HelloAR
                             {
                                 exist = true;
                                 prefab = GameObjectHorizontalPlanePrefab;
+                                Destroy(Plane); //有物体生成之后把白平面和蓝点删除
+                                Destroy(Point);
                                 var gameObject = Instantiate(prefab, hit.Pose.position, Quaternion.identity);
                             }
                         }
@@ -148,6 +153,8 @@ namespace GoogleARCore.Examples.HelloAR
                         {
                             prefab = GameObjectHorizontalPlanePrefab;
                             exist = true;
+                            Destroy(Plane); //有物体生成之后把白平面和蓝点删除
+                            Destroy(Point);
                             var gameObject = Instantiate(prefab, hit.Pose.position, Quaternion.identity);
                         }
                     }

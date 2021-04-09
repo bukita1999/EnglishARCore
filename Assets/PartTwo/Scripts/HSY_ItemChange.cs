@@ -4,47 +4,26 @@ using UnityEngine;
 
 public class HSY_ItemChange : MonoBehaviour
 {
-    public Material diffuse;
-    public Material drawline;
-    public Renderer rend;
-    public GameObject jiantou;
+    public GameObject jiantou;      //选中物体时出现一个箭头
 
     public void DrawLine(bool b)
     {
         if (b)
         {
-            if (drawline != null)
-            {
-                rend.sharedMaterial = drawline;
-            }
-            else
-            {
-                jiantou.SetActive(true);
-            }
+            jiantou.SetActive(true);            //使箭头出现
         }
         else
         {
-            if (diffuse != null)
-            {
-                rend.sharedMaterial = diffuse;
-            }
-            else
-            {
-                jiantou.SetActive(false);
-            }
+            
+            jiantou.SetActive(false);       //使箭头消失
+
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        rend = GetComponent<Renderer>();
-        DrawLine(false);
+        DrawLine(false);            //开始箭头消失
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

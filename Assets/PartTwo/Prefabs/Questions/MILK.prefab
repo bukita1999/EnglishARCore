@@ -217,7 +217,6 @@ GameObject:
   - component: {fileID: 188187890387607338}
   - component: {fileID: 188187890387607231}
   - component: {fileID: 188187890387607220}
-  - component: {fileID: 188187890387607180}
   m_Layer: 0
   m_Name: cake
   m_TagString: Untagged
@@ -336,7 +335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f59677d1e952be42b8d56df443d5f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectname: 
   UiController: {fileID: 0}
 --- !u!114 &188187890387607220
 MonoBehaviour:
@@ -350,22 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deba2ccd6bff18d469200a5065dfdf09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diffuse: {fileID: 0}
-  drawline: {fileID: 0}
-  rend: {fileID: 0}
   jiantou: {fileID: 188187890387606817}
---- !u!114 &188187890387607180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188187890387606809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867147a753eee114fb55b54aa7b8c754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &188187890387606813
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,7 +529,6 @@ GameObject:
   - component: {fileID: 188187890387607387}
   - component: {fileID: 188187890387607370}
   - component: {fileID: 188187890387607272}
-  - component: {fileID: 188187890387607281}
   - component: {fileID: 188187890387607226}
   m_Layer: 0
   m_Name: fish
@@ -657,20 +639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f59677d1e952be42b8d56df443d5f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectname: 
   UiController: {fileID: 0}
---- !u!114 &188187890387607281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188187890387606839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867147a753eee114fb55b54aa7b8c754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &188187890387607226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -683,9 +652,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deba2ccd6bff18d469200a5065dfdf09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diffuse: {fileID: 0}
-  drawline: {fileID: 0}
-  rend: {fileID: 0}
   jiantou: {fileID: 188187890387606947}
 --- !u!1 &188187890387606860
 GameObject:
@@ -703,7 +669,6 @@ GameObject:
   - component: {fileID: 188187890387607334}
   - component: {fileID: 188187890387607243}
   - component: {fileID: 188187890387607250}
-  - component: {fileID: 188187890387607235}
   m_Layer: 0
   m_Name: Rice
   m_TagString: Untagged
@@ -831,7 +796,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f59677d1e952be42b8d56df443d5f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectname: 
   UiController: {fileID: 0}
 --- !u!114 &188187890387607250
 MonoBehaviour:
@@ -845,22 +809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deba2ccd6bff18d469200a5065dfdf09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diffuse: {fileID: 0}
-  drawline: {fileID: 0}
-  rend: {fileID: 0}
   jiantou: {fileID: 188187890387606868}
---- !u!114 &188187890387607235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188187890387606860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867147a753eee114fb55b54aa7b8c754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &188187890387606864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,7 +1153,6 @@ GameObject:
   - component: {fileID: 188187890387607403}
   - component: {fileID: 188187890387607276}
   - component: {fileID: 188187890387607238}
-  - component: {fileID: 188187890387607264}
   m_Layer: 0
   m_Name: milk
   m_TagString: Untagged
@@ -1271,7 +1219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f59677d1e952be42b8d56df443d5f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectname: 
   UiController: {fileID: 0}
 --- !u!114 &188187890387607238
 MonoBehaviour:
@@ -1285,22 +1232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deba2ccd6bff18d469200a5065dfdf09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diffuse: {fileID: 0}
-  drawline: {fileID: 0}
-  rend: {fileID: 0}
   jiantou: {fileID: 188187890387606921}
---- !u!114 &188187890387607264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188187890387606909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867147a753eee114fb55b54aa7b8c754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &188187890387606913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,7 +1433,7 @@ GameObject:
   - component: {fileID: 188187890387607163}
   m_Layer: 0
   m_Name: plate
-  m_TagString: Untagged
+  m_TagString: Dish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

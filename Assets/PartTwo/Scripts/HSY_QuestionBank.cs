@@ -28,14 +28,15 @@ public class HSY_QuestionBank : MonoBehaviour
     }
     void instance()
     {
+        //HSY_RayController.instance.EndStation();
         No++;
-        if(No<questions.Length)
+        if(No<questions.Length)   //题目没有全部出现
         {
             current = Instantiate(questions[No], transform.position, Quaternion.identity);
             current.transform.parent = gameObject.transform;
             HSY_PositiveAnswerRate._instance.CurrentNO++;
         }
-        else
+        else    //题目全部做完，出现正答率
         {
             //Debug.Log(No);
             HSY_PositiveAnswerRate._instance.PositiveAnswerRate.SetActive(true);
@@ -49,7 +50,7 @@ public class HSY_QuestionBank : MonoBehaviour
         {
             //Debug.Log(No);
             HSY_PlateCollider._instance.isDestroyed = false;    //确保只执行一次instance()
-            Invoke("instance", 2f);
+            Invoke("instance", 2f);   //两秒后判断是该现实下一题还是出现正答率
         }
     }
 }

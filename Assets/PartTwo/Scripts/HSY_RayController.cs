@@ -7,14 +7,13 @@ using GoogleARCore.Examples.AugmentedImage;
 public class HSY_RayController : MonoBehaviour
 {
     public GameObject item = null;
+    public static HSY_RayController instance;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-
+        instance=this;
     }
 
-    // Update is called once per frame
     void Update()
     {
         DrawLine();
@@ -22,46 +21,44 @@ public class HSY_RayController : MonoBehaviour
 
     void DrawLine()
     {
-#if UNITY_EDITOR
-        //Debug.Log(EventSystem.current.IsPointerOverGameObject());
-#else
-            if(Input.touchCount==0){
-                return;
-            }
-#endif
+        #if UNITY_EDITOR
+        #else
+                    if(Input.touchCount==0){
+                        return;
+                    }
+        #endif
 
-        //if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
-        //{
-        //    return;
-        //}
         Ray ray;
         if(Input.touchCount > 0)
         {
             ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            RaycastHit hitInfo;
-            if (Physics.Raycast(ray, out hitInfo))
+            RaycastHit hitInfo;   //存储射线碰撞到的第一个对象信息
+
+
+            if (Physics.Raycast(ray, out hitInfo)) //点击的是物体
             {
-                if (item == null)
+                if (item == null)  //之前未选中物体
                 { //第一次选中
                     item = hitInfo.transform.gameObject;
-                    ZYC_Status_Change.StartFollow(item);
+                    HSY_Status_Change.StartFollow(item);
                 }
-                else if (item != hitInfo.transform.gameObject)
+                else if (item != hitInfo.transform.gameObject)   //之前选中了物体，但不是当前触碰的物体
                 {   //切换物体
-                    ZYC_Status_Change.EndFollow(item);
+                    HSY_Status_Change.EndFollow(item);
                     item = hitInfo.transform.gameObject;
-                    ZYC_Status_Change.StartFollow(item);
+                    HSY_Status_Change.StartFollow(item);
                 }
             }
-            else
+            else  //点击的是空白处
             {
                 if (item != null)
                 { //选中空白
-                    ZYC_Status_Change.EndFollow(item);
+                    HSY_Status_Change.EndFollow(item);
                     item = null;
                 }
             }
         }
         
     }
+
 }

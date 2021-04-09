@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/WonderofWorld/Scenes/PracticeTitle.unity
     guid: 0d57cfdbb67fe5c42a6335522837614e
+  - enabled: 1
+    path: Assets/PartThree/Scenes/WaitinRoom.unity
+    guid: 69196d87e8420034cbc54b9f64fa2598
   m_configObjects: {}

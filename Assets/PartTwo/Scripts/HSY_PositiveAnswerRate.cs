@@ -49,7 +49,7 @@ public class HSY_PositiveAnswerRate : MonoBehaviour
         }
         else
         {
-            PositiveRate.text ="PositiveAnswerRate: "+ (PositiveNum / (PositiveNum + NegativeNum)).ToString("p2");
+            PositiveRate.text ="PositiveRate: "+ (PositiveNum / (PositiveNum + NegativeNum)).ToString("p2");
         }
         
     }

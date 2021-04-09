@@ -124,7 +124,7 @@ public class OnlineManager : MonoBehaviour
     }
     private void SceneChange()
     {
-        SceneManager.LoadScene("Maintitle");
+        SceneManager.LoadScene("WaitinRoom");
     }
     private void OpenSql()
     {
