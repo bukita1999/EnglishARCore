@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PartThree/Scenes/WaitinRoom.unity
     guid: 69196d87e8420034cbc54b9f64fa2598
+  - enabled: 1
+    path: Assets/PartThree/Scenes/BattleRoom.unity
+    guid: b4b1a2381b9c2e342b0d835b097b1469
   m_configObjects: {}

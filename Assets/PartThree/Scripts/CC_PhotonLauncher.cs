@@ -1,14 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.UI;
-using Photon.Pun;
-using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 public class CC_PhotonLauncher : MonoBehaviourPunCallbacks
 {
     public GameObject HostID;
     public GameObject inputfield;
+    public GameObject ConnectingText;
+    public GameObject Host_btn;
+    public GameObject Guest_btn;
     #region Private Serializable Fields
 
     
@@ -48,9 +50,27 @@ public class CC_PhotonLauncher : MonoBehaviourPunCallbacks
     /// </summary>
     void Start()
     {
-        
+        Host_btn.SetActive(false);
+        Guest_btn.SetActive(false);
+        if (PhotonNetwork.IsConnected == false)
+        {
+            PhotonNetwork.ConnectUsingSettings();
+            PhotonNetwork.GameVersion = gameVersion.ToString();
+            ConnectingText.SetActive(true);
+            
+        }
     }
-
+    public override void OnConnectedToMaster()
+    {
+        Debug.Log("Connected To the Master");
+        ConnectingText.SetActive(false);
+        Host_btn.SetActive(true);
+        Guest_btn.SetActive(true);
+    }
+    public override void OnJoinedRoom()
+    {
+        SceneManager.LoadScene("BattleRoom");
+    }
 
     #endregion
 
@@ -66,19 +86,25 @@ public class CC_PhotonLauncher : MonoBehaviourPunCallbacks
     public void Connect(bool Host)
     {
         // we check if we are connected or not, we join if we are , else we initiate the connection to the server.
-        if (Host is true)
+        
+        
+        
+        if (Host)
         {
+            RoomOptions roomOptions = new RoomOptions();
+            roomOptions.IsVisible = true;
+            roomOptions.MaxPlayers = 2;
             // #Critical we need at this point to attempt joining a Random Room. If it fails, we'll get notified in OnJoinRandomFailed() and we'll create one.
-            PhotonNetwork.CreateRoom(HostID.GetComponent<Text>().text, new RoomOptions());
+            PhotonNetwork.CreateRoom(HostID.GetComponent<Text>().text, roomOptions);
+            
         }
         else
         {
             // #Critical, we must first and foremost connect to Photon Online Server.
             PhotonNetwork.JoinRoom(inputfield.GetComponent<InputField>().text);
-            
         }
     }
-
-
     #endregion
+
+    
 }

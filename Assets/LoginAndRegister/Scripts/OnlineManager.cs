@@ -66,6 +66,7 @@ public class OnlineManager : MonoBehaviour
             notification = "注册成功";
             Debug.Log("注册成功");
             
+            
         }
         catch (MySqlException ex)
         {
@@ -98,6 +99,7 @@ public class OnlineManager : MonoBehaviour
                 Debug.Log(reader["No."].ToString());
                 notification = "登录成功";
                 user_number = Convert.ToInt32(reader["No."]);
+                
             }
             else
             {
@@ -119,6 +121,13 @@ public class OnlineManager : MonoBehaviour
         }
         if(notification is "登录成功")
         {
+            OpenSql();
+            string sqlString2 = string.Format("INSERT INTO `englisharcore`.`online_score` (`No`, `user_No`, `Score`) VALUES (NULL,'{0}' , '{1}')",
+                user_number, 10);
+            MySqlCommand mysqlcom2 = new MySqlCommand(sqlString2, mySqlConnection);
+            mysqlcom2.ExecuteNonQuery();
+            Debug.Log("账号分数初始化成功");
+            CloseSql();
             Invoke(nameof(SceneChange), 2f);
         }
     }
