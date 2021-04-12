@@ -8,6 +8,18 @@ public class ZYC_RayController : MonoBehaviour
 {
     public GameObject item=null;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        DrawLine();
+    }
+
     void DrawLine(){
         #if UNITY_EDITOR
             Debug.Log(EventSystem.current.IsPointerOverGameObject());

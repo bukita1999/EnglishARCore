@@ -28,7 +28,6 @@ public class ZYC_ItemChange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         rend = GetComponent<Renderer>();
         DrawLine(false);
     }
