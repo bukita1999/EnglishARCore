@@ -121,14 +121,27 @@ public class OnlineManager : MonoBehaviour
         }
         if(notification is "登录成功")
         {
-            OpenSql();
-            string sqlString2 = string.Format("INSERT INTO `englisharcore`.`online_score` (`No`, `user_No`, `Score`) VALUES (NULL,'{0}' , '{1}')",
-                user_number, 10);
-            MySqlCommand mysqlcom2 = new MySqlCommand(sqlString2, mySqlConnection);
-            mysqlcom2.ExecuteNonQuery();
-            Debug.Log("账号分数初始化成功");
-            CloseSql();
-            Invoke(nameof(SceneChange), 2f);
+            try
+            {
+                OpenSql();
+                string sqlString2 = string.Format("INSERT INTO `englisharcore`.`online_score` (`No`, `user_No`, `Score`) VALUES (NULL,'{0}' , '{1}')",
+                    user_number, 10);
+                MySqlCommand mysqlcom2 = new MySqlCommand(sqlString2, mySqlConnection);
+                mysqlcom2.ExecuteNonQuery();
+                Debug.Log("账号分数初始化成功");
+                
+                
+            }
+            catch(MySqlException ex)
+            {
+                Debug.Log("已有账号");
+            }
+            finally
+            {
+                CloseSql();
+                Invoke(nameof(SceneChange), 2f);
+            }
+            
         }
     }
     private void SceneChange()
