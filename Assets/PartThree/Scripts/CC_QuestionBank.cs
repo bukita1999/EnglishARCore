@@ -10,6 +10,7 @@ public class CC_QuestionBank : MonoBehaviour
     public GameObject[] questions;
     public GameObject current;
     public Vector3 newScale;
+    public GameObject setPARactive;
     private bool finished = false;
     private void Awake()
     {
@@ -21,9 +22,11 @@ public class CC_QuestionBank : MonoBehaviour
     {
         if (No == 0)    //开始要生成第一道题
         {
+            setPARactive.SetActive(true);
             current = Instantiate(questions[0], transform.position, Quaternion.identity);
             current.transform.parent = gameObject.transform;
             CC_PositiveAnswerRate._instance.CurrentNO = 1;
+            
             //Debug.Log(current.transform.name);
         }
     }
@@ -35,6 +38,7 @@ public class CC_QuestionBank : MonoBehaviour
         {
             current = Instantiate(questions[No], transform.position, Quaternion.identity);
             current.transform.parent = gameObject.transform;
+            Debug.Log(CC_PositiveAnswerRate._instance);
             CC_PositiveAnswerRate._instance.CurrentNO++;
         }
         else    //题目全部做完，出现正答率
@@ -55,7 +59,7 @@ public class CC_QuestionBank : MonoBehaviour
         }
         else if (finished && !CC_PositiveAnswerRate._instance.PositiveAnswerRate.activeSelf)
         {
-            CC_PositiveAnswerRate._instance.PositiveAnswerRate.SetActive(true);
+            CC_PositiveAnswerRate._instance.ChangeStatus(true);
         }
     }
 }

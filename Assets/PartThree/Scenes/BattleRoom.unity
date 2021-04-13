@@ -467,6 +467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1524791033}
   - component: {fileID: 1524791034}
+  - component: {fileID: 1524791035}
   m_Layer: 0
   m_Name: StatusController
   m_TagString: Untagged
@@ -495,9 +496,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524791032}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92ed29c8bc5956947b31a54e55c849ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1524791035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524791032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439d36248864d5a4ab62611baf972dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1723145711
@@ -636,6 +649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5672469428733114789}
   - component: {fileID: 5672469428733114792}
+  - component: {fileID: 5672469428733114793}
   m_Layer: 0
   m_Name: RayController
   m_TagString: Untagged
@@ -650,9 +664,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5672469428733114791}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71f96f776bb437944a83861452991cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+--- !u!114 &5672469428733114793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5672469428733114791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29474ab54ddc95849b779f4fbc68c016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}

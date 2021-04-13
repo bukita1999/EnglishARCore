@@ -14,7 +14,7 @@ public class CC_PositiveAnswerRate : MonoBehaviour
     //public float PositiveRate = 0.0f;   //正答率
     
 
-    public GameObject PositiveAnswerRate;  //本物体，接下来三个是子物体
+    public GameObject PositiveAnswerRate;  //本物体，接下来四个是子物体
     public TextMeshPro Positive;
     public TextMeshPro Negative;
     public TextMeshPro PositiveRate;
@@ -30,7 +30,8 @@ public class CC_PositiveAnswerRate : MonoBehaviour
         //Positive = transform.GetChild(0).gameObject;
         //Negative = transform.GetChild(1).gameObject;
         //PositiveRate = transform.GetChild(2).gameObject;
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
+        ChangeStatus(false);
         this.transform.position = this.transform.parent.position + new Vector3(-0.15f, 0.2f, 0);
     }
 
@@ -53,5 +54,12 @@ public class CC_PositiveAnswerRate : MonoBehaviour
             PositiveRate.text = "PositiveRate: " + (PositiveNum / (PositiveNum + NegativeNum)).ToString("p2");
         }
 
+    }
+    public void ChangeStatus(bool status)
+    {
+        Positive.gameObject.SetActive(status);
+        Negative.gameObject.SetActive(status);
+        PositiveRate.gameObject.SetActive(status);
+        WinorNot.gameObject.SetActive(status);
     }
 }
