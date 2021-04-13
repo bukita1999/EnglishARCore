@@ -3,6 +3,7 @@ using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Lean;
 
 public class CC_PhotonLauncher : MonoBehaviourPunCallbacks
 {
@@ -11,6 +12,7 @@ public class CC_PhotonLauncher : MonoBehaviourPunCallbacks
     public GameObject ConnectingText;
     public GameObject Host_btn;
     public GameObject Guest_btn;
+    public GameObject Notification;
     #region Private Serializable Fields
 
     
@@ -72,6 +74,11 @@ public class CC_PhotonLauncher : MonoBehaviourPunCallbacks
         SceneManager.LoadScene("BattleRoom");
     }
 
+    public override void OnJoinRoomFailed(short returnCode, string message)
+    {
+        base.OnJoinRoomFailed(returnCode, message);
+        Notification.GetComponent<CC_notification_textchanged>().TextChanged("没有这个房间");
+    }
     #endregion
 
 

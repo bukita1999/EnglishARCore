@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class CC_GameManager : MonoBehaviourPunCallbacks
 {
     // Start is called before the first frame update
+    public bool Player_Status;
     void Start()
     {
         
