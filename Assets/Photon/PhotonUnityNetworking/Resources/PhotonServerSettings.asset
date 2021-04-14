@@ -32,7 +32,14 @@ MonoBehaviour:
   EnableSupportLogger: 1
   RunInBackground: 1
   StartInOfflineMode: 0
-  RpcList: []
+  RpcList:
+  - ClickRpc
+  - comparsion
+  - DestroyRpc
+  - DestroySpaceship
+  - Fire
+  - RespawnSpaceship
+  - result_back
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

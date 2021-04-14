@@ -43,10 +43,18 @@ public class CC_GameManager : MonoBehaviourPunCallbacks
 
     public void Finalcount(float score)
     {
-        PhotonView photonView = new PhotonView();
-        if(!PhotonNetwork.IsMasterClient)
-            photonView.RPC(nameof(comparsion),RpcTarget.Others,score);
+        
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            CC_PositiveAnswerRate._instance.Change_Win_Lose_Status("SendingResults");
+            gameObject.GetPhotonView().RPC(nameof(comparsion), RpcTarget.Others, score.ToString());
+        }
+        else
+        {
+            CC_PositiveAnswerRate._instance.Change_Win_Lose_Status("I am the Master");
+        }
     }
+            
     #endregion
 
     #region Private Methods
@@ -63,9 +71,11 @@ public class CC_GameManager : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    void comparsion(float score)
+    void comparsion(string str_score)
     {
-        PhotonView photonView = new PhotonView();
+        float score = float.Parse(str_score);
+        CC_PositiveAnswerRate._instance.Change_Win_Lose_Status("received content:"+str_score);
+        PhotonView photonView = gameObject.GetPhotonView();
         myScore = CC_PositiveAnswerRate._instance.PositiveNum;
         int final;
         if(myScore>score)
@@ -84,28 +94,51 @@ public class CC_GameManager : MonoBehaviourPunCallbacks
             Debug.Log("HostLose");
             final = -1;
         }
-        Debug.Log("成功加入Dictionary");
-        photonView.RPC(nameof(result_back), RpcTarget.Others, final);
+        string content = "平局";
+        if (final == 1)
+        {
+            content = "Win";
+            Debug.Log(content);
+        }
+        else if (final == 0)
+        {
+            content = "Fair";
+            Debug.Log(content);
+        }
+        else if (final == -1)
+        {
+            content = "Lose";
+            Debug.Log(content);
+        }
+        CC_PositiveAnswerRate._instance.Change_Win_Lose_Status(content);
+
+        photonView.RPC(nameof(result_back), RpcTarget.Others, final.ToString());
     }
 
     [PunRPC]
-    void result_back(int final)
+    void result_back(string str_final)
     {
-        string content = "平局";
+        CC_PositiveAnswerRate._instance.Change_Win_Lose_Status("Receive Respond");
+        string content = "BackReceived";
+        int final = int.Parse(str_final);
         if(final==1)
         {
-            content = "你输了";
+            content = "Lose";
             Debug.Log(content);
         }
         else if(final==0)
         {
-            content = "平局";
+            content = "Fair";
             Debug.Log(content);
         }
         else if(final==-1)
         {
-            content = "你赢了";
+            content = "Win";
             Debug.Log(content);
+        }
+        else
+        {
+            content = "Something wrong";
         }
         CC_PositiveAnswerRate._instance.Change_Win_Lose_Status(content);
     }
