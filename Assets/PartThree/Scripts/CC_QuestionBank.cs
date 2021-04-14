@@ -45,6 +45,7 @@ public class CC_QuestionBank : MonoBehaviour
         {
             //Debug.Log(No);
             CC_PositiveAnswerRate._instance.ChangeStatus(true);
+            CC_GameManager.instance.Finalcount(CC_PositiveAnswerRate._instance.PositiveNum);
         }
 
     }

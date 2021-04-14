@@ -62,4 +62,8 @@ public class CC_PositiveAnswerRate : MonoBehaviour
         PositiveRate.gameObject.SetActive(status);
         WinorNot.gameObject.SetActive(status);
     }
+    public void Change_Win_Lose_Status(string status)
+    {
+        WinorNot.text = status;
+    }
 }
