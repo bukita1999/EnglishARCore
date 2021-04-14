@@ -44,22 +44,19 @@ public class CC_QuestionBank : MonoBehaviour
         else    //题目全部做完，出现正答率
         {
             //Debug.Log(No);
-            finished = true;
+            CC_PositiveAnswerRate._instance.ChangeStatus(true);
         }
 
     }
 
     private void Update()
     {
-        if (HSY_PlateCollider._instance.isDestroyed == true)
+        if (CC_PlateCollider._instance.isDestroyed == true)
         {
             //Debug.Log(No);
-            HSY_PlateCollider._instance.isDestroyed = false;    //确保只执行一次instance()
+            CC_PlateCollider._instance.isDestroyed = false;    //确保只执行一次instance()
             Invoke("instance", 2f);   //两秒后判断是该现实下一题还是出现正答率
         }
-        else if (finished && !CC_PositiveAnswerRate._instance.PositiveAnswerRate.activeSelf)
-        {
-            CC_PositiveAnswerRate._instance.ChangeStatus(true);
-        }
+        
     }
 }

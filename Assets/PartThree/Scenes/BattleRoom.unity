@@ -291,7 +291,7 @@ MonoBehaviour:
   FirstPersonCamera: {fileID: 896679035}
   GameObjectVerticalPlanePrefab: {fileID: 1513252861858756, guid: 8b604092cbb3d482da82845b61a6809b,
     type: 3}
-  GameObjectHorizontalPlanePrefab: {fileID: 6396156837957255446, guid: 1f0f4a68892f8a94b9459ea2bd941d11,
+  GameObjectHorizontalPlanePrefab: {fileID: 8781673609823896027, guid: c81e99041550c7e47892d332fa5a1999,
     type: 3}
   Plane: {fileID: 2083512464}
   Point: {fileID: 793958148}
@@ -648,7 +648,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5672469428733114789}
-  - component: {fileID: 5672469428733114792}
   - component: {fileID: 5672469428733114793}
   m_Layer: 0
   m_Name: RayController
@@ -657,19 +656,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5672469428733114792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5672469428733114791}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71f96f776bb437944a83861452991cef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 0}
 --- !u!114 &5672469428733114793
 MonoBehaviour:
   m_ObjectHideFlags: 0
